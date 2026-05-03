@@ -16,6 +16,18 @@ const TEAM_HASHES = {
 // In-memory unlock flag — clears on every page refresh (no storage)
 let _teamUnlocked = false;
 
+// Clear any stale localStorage unlock keys from previous versions
+(function clearLegacyStorage() {
+  const keysToRemove = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k && (k.startsWith('abmb_unlocked_') || k === 'abmb_assigned_team')) {
+      keysToRemove.push(k);
+    }
+  }
+  keysToRemove.forEach(k => localStorage.removeItem(k));
+})();
+
 // Hash a string with SHA-256, return hex string
 async function sha256(str) {
   const buf = await crypto.subtle.digest(
