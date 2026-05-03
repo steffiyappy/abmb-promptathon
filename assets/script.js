@@ -24,7 +24,6 @@ let _teamUnlocked = false;
     if (k && k.startsWith('abmb_unlocked_')) keysToRemove.push(k);
   }
   keysToRemove.forEach(k => localStorage.removeItem(k));
-  sessionStorage.removeItem('abmb_assigned_team');
 })();
 
 // Hash a string with SHA-256, return hex string
@@ -54,8 +53,9 @@ function isPowerUpRevealed(teamId) {
   return sessionStorage.getItem(`abmb_powerup_${teamId}`) === 'true';
 }
 
-function unlockTeam() {
+function unlockTeam(teamId) {
   _teamUnlocked = true;
+  sessionStorage.setItem('abmb_assigned_team', teamId);
 }
 
 function revealPowerUp(teamId) {
@@ -76,6 +76,16 @@ function initTeamPage() {
   // Facilitator bypass — skip all locks
   if (isFacilitator()) {
     showContent(gate, content, teamId);
+    return;
+  }
+
+  // Cross-team restriction — if another team has already claimed this session, block access
+  const assignedTeam = sessionStorage.getItem('abmb_assigned_team');
+  if (assignedTeam && assignedTeam !== teamId) {
+    if (gate) gate.style.display = 'none';
+    if (content) content.style.display = 'none';
+    const wrongMsg = document.getElementById('wrong-team-msg');
+    if (wrongMsg) wrongMsg.style.display = 'flex';
     return;
   }
 
