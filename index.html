@@ -235,14 +235,15 @@
     const toggle  = document.getElementById('pw-toggle-btn');
     const errMsg  = document.getElementById('main-error-msg');
 
-    // Facilitator bypass — visiting ?facilitator clears team assignment and shows all packs
+    // Facilitator bypass — visiting ?facilitator sets a session flag and shows all packs without codes
     if (new URLSearchParams(window.location.search).has('facilitator')) {
-      localStorage.removeItem('abmb_assigned_team');
+      sessionStorage.setItem('abmb_facilitator', 'true');
+      sessionStorage.removeItem('abmb_assigned_team');
       localStorage.setItem('abmb_main_unlocked', 'true');
       showMain();
     } else if (localStorage.getItem('abmb_main_unlocked') === 'true') {
-      // If already assigned a team, redirect straight there
-      const assigned = localStorage.getItem('abmb_assigned_team');
+      // If already assigned a team this session, redirect straight there
+      const assigned = sessionStorage.getItem('abmb_assigned_team');
       if (assigned) {
         window.location.href = 'teams/' + assigned + '.html';
       } else {

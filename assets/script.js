@@ -13,6 +13,9 @@ const TEAM_HASHES = {
   'strategy-transformation': '7316471d7c2179f7d6ad109e8d0baecebce7cfa1fc229e386f6d230c720ca143'
 };
 
+// In-memory unlock flag — clears on every page refresh (no storage)
+let _teamUnlocked = false;
+
 // Hash a string with SHA-256, return hex string
 async function sha256(str) {
   const buf = await crypto.subtle.digest(
@@ -30,19 +33,20 @@ function getTeamId() {
   return meta ? meta.content : null;
 }
 
-// Check if team is already unlocked (localStorage)
-function isUnlocked(teamId) {
-  return localStorage.getItem(`abmb_unlocked_${teamId}`) === 'true';
+// Facilitator mode — set by index.html when ?facilitator is in URL
+function isFacilitator() {
+  return sessionStorage.getItem('abmb_facilitator') === 'true';
 }
 
-// Check if Power Ups are revealed (session only — resets on exit)
+// Check if Power Ups are revealed (session only — resets on tab close)
 function isPowerUpRevealed(teamId) {
   return sessionStorage.getItem(`abmb_powerup_${teamId}`) === 'true';
 }
 
 function unlockTeam(teamId) {
-  localStorage.setItem(`abmb_unlocked_${teamId}`, 'true');
-  localStorage.setItem('abmb_assigned_team', teamId);
+  _teamUnlocked = true;
+  // Track assigned team in sessionStorage (clears when browser closes)
+  sessionStorage.setItem('abmb_assigned_team', teamId);
 }
 
 function revealPowerUp(teamId) {
@@ -60,10 +64,15 @@ function initTeamPage() {
   const submitBtn = document.getElementById('unlock-btn');
   const errorMsg = document.getElementById('error-msg');
 
+  // Facilitator bypass — skip all locks
+  if (isFacilitator()) {
+    showContent(gate, content, teamId);
+    return;
+  }
+
   // Check if another team has already claimed this session
-  const assignedTeam = localStorage.getItem('abmb_assigned_team');
+  const assignedTeam = sessionStorage.getItem('abmb_assigned_team');
   if (assignedTeam && assignedTeam !== teamId) {
-    // Show wrong-team block — hide gate and content
     if (gate) gate.style.display = 'none';
     if (content) content.style.display = 'none';
     const wrongMsg = document.getElementById('wrong-team-msg');
@@ -71,8 +80,8 @@ function initTeamPage() {
     return;
   }
 
-  // Already unlocked?
-  if (isUnlocked(teamId)) {
+  // In-memory unlock — requires re-entry on every refresh
+  if (_teamUnlocked) {
     showContent(gate, content, teamId);
     return;
   }
@@ -105,15 +114,12 @@ function showContent(gate, content, teamId) {
   if (gate) gate.style.display = 'none';
   if (content) {
     content.style.display = 'block';
-    // Animate in
     content.style.opacity = '0';
     requestAnimationFrame(() => {
       content.style.transition = 'opacity 0.4s ease';
       content.style.opacity = '1';
     });
   }
-
-  // Check Power Up status
   initPowerUpGate(teamId);
 }
 
@@ -145,7 +151,6 @@ function showPowerUps(gate, section, banner) {
       section.style.opacity = '1';
     });
   }
-  // Confetti-like effect using emojis
   const confetti = document.getElementById('confetti-burst');
   if (confetti) {
     confetti.style.display = 'block';
@@ -154,3 +159,4 @@ function showPowerUps(gate, section, banner) {
 }
 
 document.addEventListener('DOMContentLoaded', initTeamPage);
+
