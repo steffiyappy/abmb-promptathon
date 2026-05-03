@@ -35,9 +35,9 @@ function isUnlocked(teamId) {
   return localStorage.getItem(`abmb_unlocked_${teamId}`) === 'true';
 }
 
-// Check if Power Ups are revealed
+// Check if Power Ups are revealed (session only — resets on exit)
 function isPowerUpRevealed(teamId) {
-  return localStorage.getItem(`abmb_powerup_${teamId}`) === 'true';
+  return sessionStorage.getItem(`abmb_powerup_${teamId}`) === 'true';
 }
 
 function unlockTeam(teamId) {
@@ -45,7 +45,7 @@ function unlockTeam(teamId) {
 }
 
 function revealPowerUp(teamId) {
-  localStorage.setItem(`abmb_powerup_${teamId}`, 'true');
+  sessionStorage.setItem(`abmb_powerup_${teamId}`, 'true');
 }
 
 // Main init for team pages
