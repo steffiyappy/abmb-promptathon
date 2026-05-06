@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="team-id" content="digital-workplace">
+  <title>HR &amp; Talent | Alliance Bank Prompt-a-thon 2026</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <!-- Wrong Team Block -->
+  <div id="wrong-team-msg" style="display:none;position:fixed;inset:0;background:#0a1628;z-index:9999;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;">
+    <div style="font-size:3rem;margin-bottom:16px;">🔒</div>
+    <h2 style="color:#fff;font-size:1.4rem;font-weight:800;margin-bottom:12px;">This is not your team pack.</h2>
+    <p style="color:#94A3B8;font-size:0.95rem;max-width:420px;line-height:1.7;">Your team has already been assigned a pack. Please go back and open your own team pack.</p>
+    <a href="../index.html" style="margin-top:24px;background:#F26522;color:#fff;padding:12px 28px;border-radius:8px;font-weight:700;font-size:0.95rem;text-decoration:none;">Back to Team Packs</a>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-area">
+      <div class="logo-badge">AB</div>
+      <div>
+        <div style="font-weight:800;font-size:1rem;">Alliance Bank Malaysia</div>
+        <div class="sub">Microsoft 365 Copilot Prompt-a-thon 2026</div>
+      </div>
+    </div>
+    <span class="header-badge">🔐 TEAM PACK</span>
+  </header>
+
+  <!-- Lock Gate -->
+  <div id="lock-gate" class="lock-gate">
+    <div class="lock-box">
+      <div class="lock-icon">🔐</div>
+      <h2>Team Pack Locked</h2>
+      <p>This pack is for the <strong>Digital Workplace &amp; Employee Experience</strong> team only.<br>Enter your team code to unlock.</p>
+      <input type="text" id="team-code-input" class="lock-input" placeholder="Enter team code..." autocomplete="off" spellcheck="false">
+      <p class="error-msg" id="error-msg"></p>
+      <button id="unlock-btn" class="btn btn-primary" style="margin-top:8px;">🔓 Unlock Pack</button>
+      <a href="../index.html" style="display:block;margin-top:12px;font-size:0.82rem;color:var(--ab-blue);text-decoration:none;">← Back to all teams</a>
+    </div>
+  </div>
+
+  <!-- Team Content -->
+  <div id="team-content">
+    <!-- Hero -->
+    <section class="team-hero" style="background: linear-gradient(135deg, #16A34A 0%, #0F7A30 100%);">
+      <div class="container">
+        <span class="team-label">Team 3 · Digital Workplace &amp; Employee Experience</span>
+        <h1>Digital Workplace &amp; Employee Experience</h1>
+        <div class="challenge-name">"The Portal Nobody Asked For (But Everyone Is Stuck With)"</div>
+      </div>
+    </section>
+
+    <div class="container section" style="padding-top:36px;">
+      <a href="../index.html" style="display:inline-flex;align-items:center;gap:8px;color:var(--ab-blue);font-weight:600;font-size:0.88rem;text-decoration:none;margin-bottom:24px;">← Back to All Teams</a>
+
+      <!-- Company Background -->
+      <div class="content-section">
+        <h3><span class="sec-icon" style="background:#EFF8FF;">🏦</span>About Aurora Nexus Global</h3>
+        <p style="font-size:0.93rem;line-height:1.75;color:#333;">Aurora Nexus Global employs over 3,000 people across its Malaysia and APAC operations, spanning corporate, retail, Islamic banking, and digital functions. The Group Digital and Information team manages the technology infrastructure that connects the business day-to-day, while Group Human Resources owns the policies, programmes, and people systems employees depend on. Both teams have delivered significant digital platforms over the past three years. Somehow, the employee experience has gotten harder, not easier.</p>
+      </div>
+
+      <!-- Business Pain Point -->
+      <div class="content-section">
+        <h3><span class="sec-icon" style="background:#FFF7F0;">⚠️</span>Business Pain Point</h3>
+        <div class="pain-box">
+          <p>ANG currently runs four separate platforms that employees are expected to use for information and self-service: the Learning Management System for training records and course completions; an HR portal for leave, payroll, and performance management; a SharePoint intranet for policies, announcements, and team documents; and a legacy intranet that was never formally decommissioned after the SharePoint migration in 2023. None of these platforms share a common login, a unified search layer, or a consistent notification framework. An employee looking for the updated travel claims policy has to check at least three systems before finding it. Most give up before that and raise an IT helpdesk ticket instead.</p>
+          <p style="margin-top:12px;">The cost of this fragmentation is visible in the data. IT helpdesk tickets categorised under "information access" and "policy queries" rose 40% year-on-year. In the first half of FY2025, the IT Operations team logged 847 tickets that should have been resolved through HR self-service. HR simultaneously received 312 queries that were actually IT access or system issues. Both teams are resolving problems they do not own. The average resolution time for a misdirected ticket is 6.2 hours, compared to 1.4 hours for a correctly routed one. That gap is not a helpdesk inefficiency. It is the cost of a broken employee experience, absorbed silently by two teams that did not cause it.</p>
+          <p style="margin-top:12px;">The harder truth is that the Digital team and the HR team both built their portals with legitimate mandates and genuine effort. The HR portal launched in 2022 with a self-service brief. SharePoint was rebuilt in 2023 to improve document discoverability. The LMS was upgraded in early 2024. Every project was delivered on time and on budget. None of them were designed to connect with each other, and no single team owns the joined-up experience. Employees have adapted by asking colleagues in hallways and team channels. Institutional knowledge now lives in chat threads. It cannot be searched, updated, or governed, and it disappears the moment someone leaves.</p>
+        </div>
+      </div>
+
+      <!-- Data Table -->
+      <div class="content-section">
+        <h3><span class="sec-icon" style="background:#EFF8FF;">📊</span>IT Helpdesk Ticket Log: Q1–Q2 FY2025</h3>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
+            <thead>
+              <tr style="background:var(--ab-navy);color:white;">
+                <th style="padding:10px 12px;text-align:left;white-space:nowrap;">Ticket ID</th>
+                <th style="padding:10px 12px;text-align:left;white-space:nowrap;">Source Team</th>
+                <th style="padding:10px 12px;text-align:left;white-space:nowrap;">Query Type</th>
+                <th style="padding:10px 12px;text-align:left;white-space:nowrap;">Time to Resolve (hrs)</th>
+                <th style="padding:10px 12px;text-align:left;white-space:nowrap;">Correct Channel</th>
+                <th style="padding:10px 12px;text-align:left;white-space:nowrap;">Escalated?</th>
+                <th style="padding:10px 12px;text-align:left;white-space:nowrap;">Self-Resolved?</th>
+                <th style="padding:10px 12px;text-align:left;white-space:nowrap;">Month</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:#FFFFFF;border-bottom:1px solid var(--ab-border);"><td style="padding:9px 12px;">TK-1041</td><td style="padding:9px 12px;">IT Operations</td><td style="padding:9px 12px;">Policy Document Access</td><td style="padding:9px 12px;">7.5</td><td style="padding:9px 12px;">HR Portal</td><td style="padding:9px 12px;">Yes</td><td style="padding:9px 12px;">No</td><td style="padding:9px 12px;">Jan 2025</td></tr>
+              <tr style="background:#F8FAFC;border-bottom:1px solid var(--ab-border);"><td style="padding:9px 12px;">TK-1087</td><td style="padding:9px 12px;">HR</td><td style="padding:9px 12px;">System Login Issue</td><td style="padding:9px 12px;">4.2</td><td style="padding:9px 12px;">IT Helpdesk</td><td style="padding:9px 12px;">No</td><td style="padding:9px 12px;">No</td><td style="padding:9px 12px;">Jan 2025</td></tr>
+              <tr style="background:#FFFFFF;border-bottom:1px solid var(--ab-border);"><td style="padding:9px 12px;">TK-1134</td><td style="padding:9px 12px;">IT Operations</td><td style="padding:9px 12px;">Leave Balance Query</td><td style="padding:9px 12px;">5.8</td><td style="padding:9px 12px;">HR Portal</td><td style="padding:9px 12px;">No</td><td style="padding:9px 12px;">No</td><td style="padding:9px 12px;">Feb 2025</td></tr>
+              <tr style="background:#F8FAFC;border-bottom:1px solid var(--ab-border);"><td style="padding:9px 12px;">TK-1189</td><td style="padding:9px 12px;">HR</td><td style="padding:9px 12px;">SharePoint Permissions</td><td style="padding:9px 12px;">6.1</td><td style="padding:9px 12px;">IT Operations</td><td style="padding:9px 12px;">Yes</td><td style="padding:9px 12px;">No</td><td style="padding:9px 12px;">Feb 2025</td></tr>
+              <tr style="background:#FFFFFF;border-bottom:1px solid var(--ab-border);"><td style="padding:9px 12px;">TK-1203</td><td style="padding:9px 12px;">IT Operations</td><td style="padding:9px 12px;">Training Record Not Found</td><td style="padding:9px 12px;">3.9</td><td style="padding:9px 12px;">LMS Admin</td><td style="padding:9px 12px;">No</td><td style="padding:9px 12px;">Yes</td><td style="padding:9px 12px;">Mar 2025</td></tr>
+              <tr style="background:#F8FAFC;border-bottom:1px solid var(--ab-border);"><td style="padding:9px 12px;">TK-1247</td><td style="padding:9px 12px;">IT Operations</td><td style="padding:9px 12px;">Expense Policy Clarification</td><td style="padding:9px 12px;">8.3</td><td style="padding:9px 12px;">HR Portal</td><td style="padding:9px 12px;">Yes</td><td style="padding:9px 12px;">No</td><td style="padding:9px 12px;">Mar 2025</td></tr>
+              <tr style="background:#FFFFFF;border-bottom:1px solid var(--ab-border);"><td style="padding:9px 12px;">TK-1298</td><td style="padding:9px 12px;">HR</td><td style="padding:9px 12px;">Onboarding Checklist Missing</td><td style="padding:9px 12px;">5.5</td><td style="padding:9px 12px;">Digital Team</td><td style="padding:9px 12px;">No</td><td style="padding:9px 12px;">No</td><td style="padding:9px 12px;">Apr 2025</td></tr>
+              <tr style="background:#F8FAFC;border-bottom:1px solid var(--ab-border);"><td style="padding:9px 12px;">TK-1341</td><td style="padding:9px 12px;">IT Operations</td><td style="padding:9px 12px;">Performance Form Not Loading</td><td style="padding:9px 12px;">4.7</td><td style="padding:9px 12px;">HR Portal</td><td style="padding:9px 12px;">Yes</td><td style="padding:9px 12px;">No</td><td style="padding:9px 12px;">Apr 2025</td></tr>
+              <tr style="background:#FFFFFF;border-bottom:1px solid var(--ab-border);"><td style="padding:9px 12px;">TK-1389</td><td style="padding:9px 12px;">HR</td><td style="padding:9px 12px;">Benefits Enrolment Error</td><td style="padding:9px 12px;">9.1</td><td style="padding:9px 12px;">IT Operations</td><td style="padding:9px 12px;">Yes</td><td style="padding:9px 12px;">No</td><td style="padding:9px 12px;">May 2025</td></tr>
+              <tr style="background:#F8FAFC;border-bottom:1px solid var(--ab-border);"><td style="padding:9px 12px;">TK-1412</td><td style="padding:9px 12px;">IT Operations</td><td style="padding:9px 12px;">Policy Version Conflict</td><td style="padding:9px 12px;">6.8</td><td style="padding:9px 12px;">HR / Digital (disputed)</td><td style="padding:9px 12px;">Yes</td><td style="padding:9px 12px;">No</td><td style="padding:9px 12px;">May 2025</td></tr>
+              <tr style="background:#FFFFFF;border-bottom:1px solid var(--ab-border);"><td style="padding:9px 12px;">TK-1455</td><td style="padding:9px 12px;">HR</td><td style="padding:9px 12px;">LMS Course Enrolment Failure</td><td style="padding:9px 12px;">3.3</td><td style="padding:9px 12px;">LMS Admin</td><td style="padding:9px 12px;">No</td><td style="padding:9px 12px;">Yes</td><td style="padding:9px 12px;">Jun 2025</td></tr>
+              <tr style="background:#F8FAFC;border-bottom:1px solid var(--ab-border);"><td style="padding:9px 12px;">TK-1501</td><td style="padding:9px 12px;">IT Operations</td><td style="padding:9px 12px;">"Where Do I Find..." Query</td><td style="padding:9px 12px;">7.2</td><td style="padding:9px 12px;">Multiple</td><td style="padding:9px 12px;">Yes</td><td style="padding:9px 12px;">No</td><td style="padding:9px 12px;">Jun 2025</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Email Thread -->
+      <div class="content-section">
+        <h3><span class="sec-icon" style="background:#FFFBEB;">📧</span>Email Thread</h3>
+        <div style="background:#FAFAFA;border:1px solid var(--ab-border);border-radius:10px;padding:20px;font-size:0.87rem;line-height:1.7;">
+          <div style="border-bottom:1px solid var(--ab-border);padding-bottom:12px;margin-bottom:16px;color:var(--ab-gray);">
+            <strong style="color:#333;">From:</strong> Amir Rashid, IT Operations Manager, Aurora Nexus Global<br>
+            <strong style="color:#333;">To:</strong> Faridah Zulkifli, Head of Digital Transformation<br>
+            <strong style="color:#333;">Subject:</strong> Our Employee Portal is Creating More Problems Than It Solves
+          </div>
+          <p>In the first six months of 2025, my team resolved 847 tickets that had nothing to do with IT infrastructure. Staff are raising tickets with us because they cannot find HR policy documents, cannot log into the HR portal, or cannot determine which system holds the authoritative version of anything. My engineers are spending a combined 38 hours per week answering questions that a functioning self-service portal should have eliminated entirely. We are subsidising a broken digital experience with IT Operations headcount, and I cannot keep absorbing that cost without this being a shared problem.</p>
+          <p style="margin-top:12px;">The issue is not the technology. We built four separate systems, each owned by a different team, with no shared taxonomy, no unified search layer, and no clear signposting to tell an employee which system to use for what. Every time we launch a new portal or migrate content to SharePoint, we add another door that employees have to try before finding the right one. I need us to agree on who owns the end-to-end employee digital experience, and then give that person the authority and the budget to actually fix it. What we have now is digital clutter with a helpdesk tax attached to it.</p>
+        </div>
+      </div>
+
+      <!-- Chat Extract -->
+      <div class="content-section">
+        <h3><span class="sec-icon" style="background:#F0FDF4;">💬</span>Chat Extract: Digital Transformation Team Channel</h3>
+        <div style="background:#FAFAFA;border:1px solid var(--ab-border);border-radius:10px;padding:20px;font-size:0.87rem;display:flex;flex-direction:column;gap:14px;">
+          <div>
+            <div style="margin-bottom:3px;"><strong style="color:var(--ab-blue);">Priya Nair</strong> <span style="color:var(--ab-gray);font-size:0.78rem;">10:14</span></div>
+            <div>Has anyone looked at last month's ticket data? We hit another record for misdirected queries. Nearly 40% of what IT is logging should have been resolved in the HR portal.</div>
+          </div>
+          <div>
+            <div style="margin-bottom:3px;"><strong style="color:var(--ab-blue);">Daniel Loh</strong> <span style="color:var(--ab-gray);font-size:0.78rem;">10:17</span></div>
+            <div>Not surprised. I had three new joiners last week ask me personally where to find the travel policy. None of them thought to check SharePoint because nobody told them SharePoint existed.</div>
+          </div>
+          <div>
+            <div style="margin-bottom:3px;"><strong style="color:var(--ab-blue);">Suraya Hamdan</strong> <span style="color:var(--ab-gray);font-size:0.78rem;">10:21</span></div>
+            <div>The onboarding checklist still links to the old intranet for two items. Nobody has updated it since 2023. HR thinks Digital owns it. Digital thinks HR owns it.</div>
+          </div>
+          <div>
+            <div style="margin-bottom:3px;"><strong style="color:var(--ab-blue);">Marcus Tan</strong> <span style="color:var(--ab-gray);font-size:0.78rem;">10:25</span></div>
+            <div>This is the ownership problem in one sentence. Four systems, zero points of accountability. Every project team delivered their portal on time and on budget, and now nobody is responsible for the joined-up experience.</div>
+          </div>
+          <div>
+            <div style="margin-bottom:3px;"><strong style="color:var(--ab-blue);">Priya Nair</strong> <span style="color:var(--ab-gray);font-size:0.78rem;">10:28</span></div>
+            <div>We need to stop treating this as a helpdesk problem and start treating it as a product problem. The "product" is the employee experience, and right now it has no product owner.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tasks -->
+      <div class="content-section">
+        <h3><span class="sec-icon" style="background:#F5F3FF;">🎯</span>Your Tasks</h3>
+        <div style="display:flex;flex-direction:column;gap:16px;margin-top:4px;">
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="min-width:32px;height:32px;background:var(--ab-blue);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85rem;flex-shrink:0;margin-top:2px;">1</div>
+            <p style="font-size:0.93rem;line-height:1.7;padding-top:4px;">Using the helpdesk ticket data provided, identify the top three fragmentation patterns. Which query types are most frequently misdirected? Which teams are absorbing the most misrouted work? What do the escalation rate and average resolution time tell you about where the system is breaking down most severely? Use Copilot to summarise the patterns, calculate the time cost, and highlight which ticket types are doing the most damage to productivity.</p>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="min-width:32px;height:32px;background:var(--ab-blue);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85rem;flex-shrink:0;margin-top:2px;">2</div>
+            <p style="font-size:0.93rem;line-height:1.7;padding-top:4px;">If ANG replaced its four fragmented platforms with one unified employee digital experience, what would it look like? Define the core features, the ownership model, and the governing principle for what belongs on the unified platform versus what stays in a specialist system. Use Copilot to help you build a design brief that covers the top five employee journeys the platform must support, the governance model needed to keep it current, and how a new joiner would experience it on day one.</p>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="min-width:32px;height:32px;background:var(--ab-blue);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85rem;flex-shrink:0;margin-top:2px;">3</div>
+            <p style="font-size:0.93rem;line-height:1.7;padding-top:4px;">Identify the two highest-impact changes ANG can make in the next 90 days to reduce helpdesk misdirection and improve information discoverability. Define three measurable outcomes that would confirm the employee digital experience is improving. Use Copilot to stress-test your recommendations against the ticket data and the platform design from Task 2, and draft a one-page brief that the Head of Digital Transformation could take to the HR leadership.</p>
+          </div>
+        </div>
+      </div>
+
+            <!-- Working File -->
+      <div class="content-section" style="background:linear-gradient(135deg,#EFF6FF,#E0EEFF);border:1px solid #BFDBFE;">
+        <h3><span class="sec-icon" style="background:#DBEAFE;">📝</span>Your Working File</h3>
+        <p style="font-size:0.92rem;line-height:1.7;color:#1E3A5F;">Your working folder contains <strong>2 files</strong> for your team:</p>
+        <ul style="font-size:0.92rem;line-height:1.9;color:#1E3A5F;margin:10px 0 0 18px;">
+          <li>📊 <strong>BLANK – Promptathon Team Pack</strong>: your main working file. Use this to document your prompts, Copilot outputs, and key insights throughout the challenge. You will present from this at the end.</li>
+          <li>⚖️ <strong>Peer Judging Sheet</strong>: used during the presentation segment. You will score the <em>other</em> teams while they present their work.</li>
+        </ul>
+        <div style="margin-top:16px;background:white;border:1px solid #BFDBFE;border-radius:10px;padding:16px;text-align:center;">
+          <a href="https://absx62256373-my.sharepoint.com/:f:/g/personal/admin_absx62256373_onmicrosoft_com/IgCgqZYhLcQkSLtTi4hF2jBqAfN95MWSxENc3h8kCoPPkKk?e=FRKRl8" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#0055A4;color:#fff;padding:13px 28px;border-radius:8px;font-weight:700;font-size:0.95rem;text-decoration:none;">🔗 Open Your Working Folder</a>
+          <p style="margin-top:10px;font-size:0.8rem;color:var(--ab-gray);">Opens in OneDrive. Use Incognito / InPrivate mode.</p>
+        </div>
+        <div style="margin-top:12px;background:#FFF7ED;border:1px solid #FED7AA;border-radius:10px;padding:14px 16px;font-size:0.88rem;color:#92400E;display:flex;gap:10px;align-items:flex-start;">
+          <span style="font-size:1.2rem;flex-shrink:0;">🕵️</span>
+          <div><strong>Important:</strong> Open the working file in an <strong>Incognito</strong> (Chrome) or <strong>InPrivate</strong> (Edge) window. This ensures you are working from the correct shared folder and your work is saved properly.</div>
+        </div>
+      </div>
+
+      <!-- Power Up Gate -->
+      <div id="powerup-gate">
+        <div class="powerup-locked-icons">⚡🔒⚡</div>
+        <h3>Power Ups: Locked</h3>
+        <p>Power Ups are your next step — take what you built today and think about how to bring it back to your real work at Alliance Bank.<br>Complete your challenge tasks first, then unlock them here.</p>
+        <button id="reveal-powerups-btn" class="btn btn-orange" style="max-width:300px;margin:0 auto;">✅ We've Completed Our Work. Reveal Power Ups!</button>
+      </div>
+
+      <!-- Revealed Banner -->
+      <div id="revealed-banner" class="revealed-banner" style="display:none;">
+        ✅ &nbsp; Power Ups revealed! Use these to take your output to the next level before presenting.
+      </div>
+
+      <!-- Confetti burst -->
+      <div id="confetti-burst" style="display:none;text-align:center;font-size:2rem;padding:16px;letter-spacing:8px;">⚡🎉⚡🎉⚡🎉⚡🎉⚡</div>
+
+      <!-- Power Ups Section -->
+      <div id="powerups-section">
+        <div class="section-title" style="margin-bottom:16px;">&#9889; Power Up: Adopt It</div>
+        <p style="color:#333;font-size:0.9rem;margin-bottom:24px;">You have used Copilot to solve a scenario. Now bring it back to your real work at Alliance Bank.</p>
+
+        <!-- Step 1 -->
+        <div class="powerup-card" style="margin-bottom:16px;">
+          <div class="pu-header">
+            <span class="pu-num">1</span>
+            <span class="pu-title">Pick Your Use Case <span style="font-size:0.8rem;font-weight:500;opacity:0.7;">&middot; 5 min</span></span>
+          </div>
+          <p style="font-size:0.88rem;line-height:1.7;margin:0 0 12px;">In Tasks 1 and 2, you found that the biggest driver of helpdesk noise is not broken technology but employees not knowing which system to use for what. You also designed a unified employee experience with a clear ownership model. Alliance Bank faces the same challenge: multiple platforms, multiple owners, and no single front door for staff.</p>
+          <p style="font-size:0.87rem;margin-bottom:8px;font-weight:600;">Use cases from digital workplace and HR teams at banks like yours. React to these: swap, add, or keep.</p>
+          <ul style="font-size:0.86rem;line-height:1.9;color:#333;margin:0 0 14px 18px;">
+            <li>Analyse a batch of recent IT or HR helpdesk tickets and group them by root cause and the system that should have resolved each query without escalation</li>
+            <li>Draft a plain-language "where to find what" guide for Alliance Bank staff, covering the top 20 questions employees ask IT and HR every month</li>
+            <li>Review a set of policy documents across systems and flag which ones are outdated, duplicated, or missing from the primary employee portal</li>
+            <li>Write an internal communication to staff explaining a portal change: what has moved, where to find it now, and what to do if something is missing</li>
+            <li>Generate onboarding content for new joiners that maps the five digital tools they need in their first two weeks, with step-by-step access instructions</li>
+          </ul>
+          <p style="font-size:0.87rem;margin-bottom:8px;">As a team, pick your top 3, then paste this into Copilot:</p>
+          <div class="pu-prompt">"We work in digital workplace and HR at a bank. Here are 3 Copilot use cases we identified: [list them]. Score each on: time saved per week, how often we'd use it, and ease of implementation. Rank them and explain your top pick."</div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="powerup-card" style="margin-bottom:16px;">
+          <div class="pu-header">
+            <span class="pu-num">2</span>
+            <span class="pu-title">Build the Prompt <span style="font-size:0.8rem;font-weight:500;opacity:0.7;">&middot; 5 min</span></span>
+          </div>
+          <p style="font-size:0.88rem;line-height:1.7;margin:0 0 12px;">Your winning use case needs a great prompt. Paste this into Copilot:</p>
+          <div class="pu-prompt">"For this use case: [describe your winning use case]. What data or input would we need? Write the best Copilot prompt to make this work. Then show a sample output."</div>
+          <p style="font-size:0.86rem;margin-top:10px;color:var(--ab-gray);">Test it. Refine it. Make it yours.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="powerup-card">
+          <div class="pu-header">
+            <span class="pu-num">3</span>
+            <span class="pu-title">Pitch It <span style="font-size:0.8rem;font-weight:500;opacity:0.7;">&middot; 5 min</span></span>
+          </div>
+          <p style="font-size:0.88rem;line-height:1.7;margin:0 0 12px;">Draft your adoption pitch:</p>
+          <div class="pu-prompt">"Draft a short adoption pitch for our digital and HR manager: what the use case is, what problem it solves, what data or content we'd give Copilot, and what the first step is to roll it out to the team."</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <strong>Alliance Bank Malaysia × Microsoft 365 Copilot Prompt-a-thon 2026</strong>
+  </footer>
+  <script src="../assets/script.js"></script>
+</body>
+</html>

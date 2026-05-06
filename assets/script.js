@@ -5,12 +5,12 @@
 const TEAM_HASHES = {
   'consumer-banking':        '668ab31e92a1109afbb18737c3f30df4ff8fbbd8863c0a10cb03dbb25ddecb59', // ConsumerBanking
   'sme-banking':             'c684665fcdd31e93392afe66290e4c552647425f693eb25ff1b8acbad41351a3', // SMEBanking
-  'hr-talent':               'e6a96cfd58ca89915e082ef22d9894955a905442ced6b1553a2191eb2a70405d', // DigitalWorkplace
+  'digital-workplace':       'e6a96cfd58ca89915e082ef22d9894955a905442ced6b1553a2191eb2a70405d', // DigitalWorkplace
   'finance-reporting':       '96500f509b0310f01ce7bf570213dbbd743ee8d514b8d3ad481c1bd66f5f2a28', // FinanceReporting
   'risk-compliance':         '7da04efdc3b05c913bc8cde8b076ab76c6e099f53e12228c7a5a179f80421766', // RiskCompliance
   'digital-technology':      '520b27bdc574885a890171a4e4ebcb29bb05a82cf01c6c0e4f1b0b0f5a9980b6', // DigitalTechnology
-  'corporate-comms':         '2d9e98dcba6bda7cf5be6791d8fcad69609f621f3b056618efa17d69a6749857', // StrategyComms
-  'strategy-transformation': 'c053703c1fec39a316c2a0bdae8df054b06269dfbae6b6b9afca4bf37d14c084'  // OperationsTreasury
+  'strategy-comms':          '2d9e98dcba6bda7cf5be6791d8fcad69609f621f3b056618efa17d69a6749857', // StrategyComms
+  'operations-treasury':     'c053703c1fec39a316c2a0bdae8df054b06269dfbae6b6b9afca4bf37d14c084'  // OperationsTreasury
 };
 
 // In-memory unlock flag — clears on every page refresh
