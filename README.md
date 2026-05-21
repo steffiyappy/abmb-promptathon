@@ -33,4 +33,4 @@ Each team receives their code from the Microsoft:
 
 ## Deployment
 
-Hosted on GitHub Pages. Access at: `https://[username].github.io/alliancebank-promptathon/`
+Hosted on GitHub Pages. Access is shared separately with attendees.
